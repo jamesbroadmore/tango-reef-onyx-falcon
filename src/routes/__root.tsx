@@ -8,9 +8,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sable Cast" },
-      { name: "description", content: "Cast page videos and mirror a screen to any Chrome or Edge window." },
-      { name: "theme-color", content: "#100e0c" },
+      { title: "4(casting)2" },
+      { name: "description", content: "A cleaner way to cast media, mirror your screen, and control every receiver window." },
+      { name: "theme-color", content: "#0b0d0f" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

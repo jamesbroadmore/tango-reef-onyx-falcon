@@ -113,7 +113,7 @@ export function Stage({ url, title, loop, rate, volume, posterNote, onTime, bind
   }, [bind]);
 
   return (
-    <div className="relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
+    <div className="relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[#07090a] shadow-2xl shadow-black/20">
       <video
         ref={videoRef}
         className="h-full w-full flex-1 bg-black object-contain"

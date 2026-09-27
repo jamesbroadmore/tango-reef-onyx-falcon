@@ -8,23 +8,44 @@
 
   html,
   body {
-    background: #100e0c;
-    color: #f4efe6;
+    background: #0b0d0f;
+    color: #edf2f4;
     min-height: 100%;
   }
 
   body {
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: "Inter", "Segoe UI", sans-serif;
     margin: 0;
+  }
+
+  ::selection {
+    background: #9ee7d5;
+    color: #0b0d0f;
   }
 }
 
 @theme {
-  --color-ink: #100e0c;
-  --color-panel: #1a1714;
-  --color-line: #3a3228;
-  --color-brass: #e4c27a;
-  --color-brass-dim: #a68445;
-  --color-paper: #f4efe6;
-  --color-mute: #a3988c;
+  --color-ink: #0b0d0f;
+  --color-panel: #13171a;
+  --color-panel-soft: #182024;
+  --color-line: #273137;
+  --color-brass: #9ee7d5;
+  --color-brass-dim: #67bca9;
+  --color-paper: #edf2f4;
+  --color-mute: #91a0a8;
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+}
+
+@layer utilities {
+  .surface-grid {
+    background-image: linear-gradient(rgba(158, 231, 213, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(158, 231, 213, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button, a, input, label {
+    transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+  button:hover:not(:disabled), a:hover { transform: translateY(-1px); }
 }

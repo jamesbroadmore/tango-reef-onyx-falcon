@@ -207,11 +207,14 @@ export function Studio() {
   const ratio = time.duration ? time.current / time.duration : 0;
 
   return (
-    <div className="min-h-screen bg-[var(--color-ink)] text-[var(--color-paper)]">
-      <header className="flex flex-wrap items-end justify-between gap-4 border-b border-[var(--color-line)] px-5 py-4 md:px-8">
-        <div>
-          <p className="text-[11px] tracking-[0.28em] text-[var(--color-brass)] uppercase">Chrome · Edge</p>
-          <h1 className="font-serif text-4xl leading-none tracking-tight">Sable Cast</h1>
+    <div className="surface-grid min-h-screen bg-[var(--color-ink)] text-[var(--color-paper)]">
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--color-line)] bg-[color:var(--color-ink)/.92] px-5 py-5 backdrop-blur md:px-8">
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-2xl bg-[var(--color-brass)] font-mono text-sm font-bold text-[var(--color-ink)]">4/2</div>
+          <div>
+            <p className="text-[10px] font-semibold tracking-[0.24em] text-[var(--color-brass)] uppercase">Personal casting studio</p>
+            <h1 className="text-2xl font-semibold leading-none tracking-tight md:text-3xl">4(casting)2</h1>
+          </div>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm">
           <label className="flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-panel)] px-3 py-1.5">
@@ -241,9 +244,12 @@ export function Studio() {
         </div>
       </header>
 
-      <main className="grid gap-4 px-5 py-5 lg:grid-cols-[280px_1fr_280px] md:px-8">
-        <section className="flex flex-col gap-3">
-          <h2 className="text-xs tracking-[0.2em] text-[var(--color-mute)] uppercase">Queue</h2>
+      <main className="mx-auto grid max-w-[1500px] gap-5 px-5 py-6 md:px-8 lg:grid-cols-[288px_1fr_288px] lg:py-8">
+        <section className="flex flex-col gap-3 rounded-3xl border border-[var(--color-line)] bg-[color:var(--color-panel)/.88] p-4 shadow-2xl shadow-black/10">
+          <div className="flex items-end justify-between">
+            <h2 className="text-xs font-semibold tracking-[0.2em] text-[var(--color-mute)] uppercase">Queue</h2>
+            <span className="font-mono text-xs text-[var(--color-mute)]">{queue.length.toString().padStart(2, "0")}</span>
+          </div>
           <div className="flex gap-2">
             <input
               value={pasted}
@@ -285,7 +291,7 @@ export function Studio() {
           </ul>
         </section>
 
-        <section className="flex min-h-[420px] flex-col gap-3">
+        <section className="flex min-h-[420px] flex-col gap-4 rounded-3xl border border-[var(--color-line)] bg-[color:var(--color-panel)/.5] p-3 md:p-4">
           <Stage
             url={current && current.kind !== "screen" ? current.url : ""}
             title={current?.title ?? ""}
@@ -321,8 +327,11 @@ export function Studio() {
           <p className="text-sm text-[var(--color-mute)]">{status}</p>
         </section>
 
-        <section className="flex flex-col gap-4">
-          <h2 className="text-xs tracking-[0.2em] text-[var(--color-mute)] uppercase">Remote</h2>
+        <section className="flex flex-col gap-4 rounded-3xl border border-[var(--color-line)] bg-[color:var(--color-panel)/.88] p-4 shadow-2xl shadow-black/10">
+          <div className="flex items-end justify-between">
+            <h2 className="text-xs font-semibold tracking-[0.2em] text-[var(--color-mute)] uppercase">Remote</h2>
+            <span className="flex items-center gap-1.5 text-xs text-[var(--color-brass)]"><span className="size-1.5 rounded-full bg-[var(--color-brass)]" />{peers} connected</span>
+          </div>
           <label className="text-sm">
             Volume {Math.round(volume * 100)}
             <input
